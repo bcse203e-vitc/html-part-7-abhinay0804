@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count</title>
+    <style>
+        body{
+            background-color: bisque;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counting made Easy....</h1>
+    <label for="str">Enter the String</label>
+    <input id="str">
+    <br><br>
+    <button onclick="cou()">Count</button>
+    <br><br>
+    <p id="res"></p>
+    <br><br>
+    <p id="res1"></p>
+    <script>
+        function cou(){
+            let a=document.getElementById("str").value;
+            let b=a.length;
+            let c=a.split(" ");
+            let d=c.length;
+            let f=1;
+            document.getElementById("res").innerHTML="Number of Characters : "+b;
+            /*for(let i=0;i<d;i++){
+                let e=0;
+                for(let j=i+1;j<d;j++){
+                    if(c[i]==c[j]){
+                        e++;
+                    }
+                }
+                if(e>0){
+                    document.getElementById.innerHTML+="Repeated Words<br>"+f+")"+c[i];
+                    f++;
+                }
+            }*/
+        }
+    </script>
+</body>
+</html>

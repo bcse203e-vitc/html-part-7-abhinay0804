@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortArray.com</title>
+    <style>
+        body{
+            background-color: bisque;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sort Arrays</h1>
+    <br>
+    <label for="arr">Enter numbers:</label>
+    <input id="arr">
+    <br>
+    <p style="color: red;">Input format:x,y,z,a,... where x,y,z,a are numbers</p>
+    <br><br>
+    <button onclick="fin()">Find</button>
+    <br><br>
+    <p id="asc">Ascending Order : </p>
+    <br>
+    <p id="des">Descending Order :</p>
+    <script>
+        function fin(){
+            let a=document.getElementById("arr").value;
+            let b=a.split(",");
+            let asc=[];
+            let des=[];
+            for(let i=0;i<b.length;i++){
+                asc[i]=parseInt(b[i]);
+                des[i]=parseInt(b[i]);
+            }
+            for(let g=0;g<b.length;g++){
+                for(let h=g+1;h<b.length;h++){
+                    if(asc[g]>asc[h]){
+                        let s=asc[g];
+                        asc[g]=asc[h];
+                        asc[h]=s;
+                    }
+                    if(des[g]<des[h]){
+                        let t=des[g];
+                        des[g]=des[h];
+                        des[h]=t;
+                    }
+                }
+            }
+            document.getElementById("asc").innerHTML +="[";
+            document.getElementById("des").innerHTML +="[";
+            for(let j=0;j<b.length;j++){
+                if(j==(b.length)-1){
+                    document.getElementById("asc").innerHTML +=asc[j]+"]";
+                    document.getElementById("des").innerHTML +=des[j]+"]";
+                }
+                else{
+                    document.getElementById("asc").innerHTML +=asc[j]+",";
+                    document.getElementById("des").innerHTML +=des[j]+",";
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

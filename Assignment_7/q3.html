@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        #display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+        table {
+            background-color: rgba(31, 30, 30, 0.884);
+            width: 100%;
+        }
+        td {
+            width: 25%;
+            height: 50px;
+            text-align: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            background: lightgray;
+            border: 1px solid black;
+        }
+        td:active {
+            background: darkgray;
+        }
+        .equal {
+            background: orange;
+        }
+        .clear {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <p id="dis"></p>
+        <table style="background-color: black;">
+            <tr>
+                <td class="clear" onclick="cd()">AC</td>
+                <td onclick="ad('%')">%</td>
+                <td onclick="ad('*')">X</td>
+                <td onclick="ad('/')">/</td>
+            </tr>
+            <tr>
+                <td onclick="ad('7')">7</td>
+                <td onclick="ad('8')">8</td>
+                <td onclick="ad('9')">9</td>
+                <td onclick="ad('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="ad('4')">4</td>
+                <td onclick="ad('5')">5</td>
+                <td onclick="ad('6')">6</td>
+                <td onclick="ad('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="ad('1')">1</td>
+                <td onclick="ad('2')">2</td>
+                <td onclick="ad('3')">3</td>
+                <td onclick="ad('0')">0</td>
+            </tr>
+            <tr>
+                <td colspan="2" onclick="ad('.')">.</td>
+                <td class="equal" colspan="2" onclick="cr()">=</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function ad(value) {
+            document.getElementById("dis").innerHTML += value;
+        }
+
+        function cd() {
+            document.getElementById("dis").innerHTML = "";
+        }
+        function cr() {
+            try {
+                let result = eval(document.getElementById("dis").innerHTML);
+                document.getElementById("dis").innerHTML = result;
+            } catch {
+                document.getElementById("dis").innerHTML = "Error";
+            }
+        }
+    </script>
+</body>
+</html>

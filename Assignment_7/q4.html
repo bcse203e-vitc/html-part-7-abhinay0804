@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <style>
+        body{
+            background-color: bisque;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Palindrome</h1>
+    <label for="str">Enter the String</label>
+    <input id="str">
+    <button onclick="palin()">Check</button>
+    <br><br>
+    <p id="res"></p>
+    <script>
+        function palin(){
+            let a=document.getElementById("str").value;
+            let b=a.length;
+            let c=0;
+            for(let i=0;i<b;i++){
+                if(a[i]==a[b-i-1]){
+                    c++;
+                }
+            }
+            if(c==b){
+                document.getElementById("res").innerHTML="Provided String is a Palindrome!!!!";
+            }
+            else{
+                document.getElementById("res").innerHTML="Provided String is not a Palindrome!!!! ";
+            }
+        }
+    </script>
+</body>
+</html>

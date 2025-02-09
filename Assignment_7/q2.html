@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        body{
+            background-color: bisque;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>FizzBuzz Challenge</h1>
+    <br><br>
+    <label for="num">Enter the Number</label>
+    <input id="num" type="number" style="background-color: rgb(217, 245, 236);">
+    <br><br>
+    <br><br>
+    <button onclick="st()" style="background-color: rgb(217, 245, 236); border-radius: 10px; border-color: black;">Submit</button>
+    <br><br>
+    <p id="res"></p>
+    <script>
+        function st(){
+            let a=parseInt(document.getElementById("num").value);
+            let b=1;
+            while(b<=a){
+                if(b%3==0 && b%5==0){
+                    document.getElementById("res").innerHTML+="FizzBuzz<br>";
+                }
+                else if(b%3==0){
+                    document.getElementById("res").innerHTML+="Fizz<br>";   
+                }
+                else if(b%5==0){
+                    document.getElementById("res").innerHTML+="Buzz<br>";
+                }
+                else{
+                    document.getElementById("res").innerHTML+=b+"<br>";
+                }
+                b++;
+            }
+        }
+    </script>
+</body>
+</html>

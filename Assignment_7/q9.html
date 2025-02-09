@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+</head>
+<body style="text-align: center; padding: 50px;">
+    <h2>Event-Driven Background Color Changer</h2>
+    <button onclick="cc('red')">Red</button>
+    <button onclick="cc('green')">Green</button>
+    <button onclick="cc('blue')">Blue</button>
+    <button onclick="cc(RC())">Random</button>
+    <script>
+        function cc(c) {
+            document.body.style.backgroundColor = c;
+        }
+        function RC() {
+            let l = "0123456789ABCDEF";
+            let c = "#";
+            for (let i = 0; i < 6; i++) {
+                c += l[Math.floor(Math.random() * 16)];
+            }
+            return c;
+        }
+    </script>
+</body>
+</html>

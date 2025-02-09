@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number comparasion</title>
+    <style>
+        body{
+            background-color: bisque;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <label for="arr">Enter numbers:</label>
+    <input id="arr">
+    <br>
+    <p style="color: red;">Input format:x,y,z,a,... where x,y,z,a are numbers</p>
+    <br><br>
+    <button onclick="fin()">Find</button>
+    <br><br>
+    <p id="sec">Second Largest :</p>
+    <br>
+    <p id="th">Third Largest :</p>
+    <script>
+        function fin(){
+            let a=document.getElementById("arr").value;
+            let b=a.split(",");
+            let cd=[];
+            for(let i=0;i<b.length;i++){
+                cd[i]=parseInt(b[i]);
+            }
+            for(let g=0;g<cd.length;g++){
+                for(let h=g+1;h<cd.length;h++){
+                    if(cd[g]>cd[h]){
+                        let s=cd[g];
+                        cd[g]=cd[h];
+                        cd[h]=s;
+                    }
+                }
+            }
+            /*for(let k=0;k<cd.length;k++){
+                document.getElementById("or").innerHTML +=cd[k]+" ";
+            }*/
+            document.getElementById("sec").innerHTML +=cd[1];
+            document.getElementById("th").innerHTML +=cd[2];
+        }
+    </script>
+</body>
+</html>

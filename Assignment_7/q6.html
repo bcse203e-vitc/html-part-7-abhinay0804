@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Duplicates</title>
+    <style>
+        body{
+            background-color: bisque;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filter in One Click</h1>
+    <br><br>
+    <label for="str">Enter the String</label>
+    <input id="str">
+    <br><br>
+    <button onclick="dup()">Filter</button>
+    <br><br>
+    <p id="du">Duplicate words : <br><br></p>
+    
+    <p id="res">Sentence without Duplicates :</p>
+    <script>
+        function dup(){
+            let a=document.getElementById("str").value;
+            let b=a.split(" ");
+            let z=0;
+            for(let i=0;i<b.length;i++){
+                let c=0;
+                for(let j=i+1;j<b.length;j++){
+                    if(b[i]==b[j]){
+                        if(c==0){
+                            document.getElementById("du").innerHTML += z+")"+b[i]+"<br><br>";
+                            b.splice(j,1);
+                            z++;
+                        }
+                        c-=5;
+                    }
+                }
+            }
+            for(let y=0;y<b.length;y++){
+                document.getElementById("res").innerHTML +=" "+b[y];
+            }
+        }
+    </script>
+</body>
+</html>
